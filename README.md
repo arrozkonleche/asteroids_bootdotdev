@@ -1,10 +1,10 @@
 # Asteroids Project
 
-** A bootdotdev project **
+**A bootdotdev project**
 
 This project heavily involves Object Oriented Programming. It uses python to recreate the asteroids game with the pygame library. 
 
-** Controls **
+**Controls**
 
 * Move with WASD (A/D rotates ship, W/S moves ship foward and backward)
 * Shoot with SPACEBAR
