@@ -1,12 +1,14 @@
 import sys
 
 import pygame
+from pygame.mixer_music import play
 
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
 from constants import SCREEN_HEIGHT, SCREEN_WIDTH
 from logger import log_event, log_state
 from player import Player
+from score import Score
 from shot import Shot
 
 
@@ -16,7 +18,11 @@ def main():
     print(f"Screen height: {SCREEN_HEIGHT}")
 
     pygame.init()
+
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+
+    player_score = Score()
+
     clock = pygame.time.Clock()
     dt = 0.0
 
@@ -47,12 +53,15 @@ def main():
             for s in shots:
                 if s.collides_with(a):
                     log_event("asteroid_shot")
+                    player_score.update(100)
                     s.kill()
                     a.split()
 
         screen.fill("black")
         for d in drawable:
             d.draw(screen)
+
+        screen.blit(player_score.text, player_score.pos)
         pygame.display.flip()
         dt = clock.tick(60) / 1000
 
