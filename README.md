@@ -11,3 +11,4 @@ This project heavily involves Object Oriented Programming. It uses python to rec
 
 
 ## Gameplay Screenshots
+![alt tag](https://github.com/arrozkonleche/asteroids_bootdotdev/blob/main/images/gameplay.png)
